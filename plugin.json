@@ -1,0 +1,27 @@
+{
+  "slug": "Kapuseru",
+  "name": "Kapuseru",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "Kapuseru",
+  "author": "Andrew Byrd",
+  "authorEmail": "andrew@fastmail.net",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "https://github.com/abstruktion/Kapuseru",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "Pythagoras",
+      "name": "Pythagoras",
+      "description": "Tunable MIDI to CV",
+      "tags": [
+        "MIDI",
+        "Tuner",
+        "Polyphonic"
+      ]
+    }
+  ]
+}
