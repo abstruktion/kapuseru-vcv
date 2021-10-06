@@ -1,7 +1,7 @@
 {
   "slug": "Kapuseru",
   "name": "Kapuseru",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "GPL-3.0-or-later",
   "brand": "Kapuseru",
   "author": "Andrew Byrd",
@@ -16,12 +16,18 @@
     {
       "slug": "Pythagoras",
       "name": "Pythagoras",
-      "description": "Tunable MIDI to CV",
+      "description": "Tunable MIDI to CV based on integer ratios.",
       "tags": [
         "MIDI",
         "Tuner",
         "Polyphonic"
       ]
+    },
+    {
+      "slug": "Superflat",
+      "name": "Superflat",
+      "description": "A toggle button that hides rack rails, screws, and knob shadows for a flatter UI style.",
+      "tags": []
     }
   ]
 }
