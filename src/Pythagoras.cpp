@@ -177,7 +177,7 @@ struct Pythagoras : Module {
 
 struct PythagorasWidget : ModuleWidget {
 
-		LedDisplay *midiDisplay;
+		LedDisplay *debugDisplay;
 		LedDisplayChoice *midiMessage;
 
 		PythagorasWidget(Pythagoras *module) {
@@ -208,7 +208,7 @@ struct PythagorasWidget : ModuleWidget {
 			addOutput(createOutput<PJ301MPort>(mm2px(Vec(60, 36)), module, Pythagoras::GATE_OUTPUT));
 
 			// MIDI input and channel selector
-			MidiWidget *midiWidget = createWidget<MidiWidget>(mm2px(Vec(3.41891, 14.8373)));
+			MidiDisplay *midiWidget = createWidget<MidiDisplay>(mm2px(Vec(3.41891, 14.8373)));
 			midiWidget->box.size = mm2px(Vec(55, 28));
 			midiWidget->setMidiPort(
 					module ? &(module->midiInput) : NULL); // without null check, segfaults when showing module library
@@ -222,14 +222,14 @@ struct PythagorasWidget : ModuleWidget {
 			// LedDisplayTextField is an editable field, as in a "patch notes" module.
 			// LedDisplayChoice is just the text with no background. You need to add it to an LedDisplay for the full effect.
 			// maybe set a pointer field on the module to correspond to the midiMessage object so we can set its text? so bad.
-			midiDisplay = createWidget<LedDisplay>(mm2px(Vec(3, 105)));
-			midiDisplay->box.size = mm2px(Vec(75, 10));
+			debugDisplay = createWidget<LedDisplay>(mm2px(Vec(3, 105)));
+			debugDisplay->box.size = mm2px(Vec(75, 10));
 			midiMessage = createWidget<LedDisplayChoice>(mm2px(Vec(0, 0)));
-			midiMessage->box.size = midiDisplay->box.size;
+			midiMessage->box.size = debugDisplay->box.size;
 			midiMessage->color = color;
 			midiMessage->text = std::string("MIDI Message display");
-			midiDisplay->addChild(midiMessage);
-			addChild(midiDisplay);
+			debugDisplay->addChild(midiMessage);
+			addChild(debugDisplay);
 
 		}
 
